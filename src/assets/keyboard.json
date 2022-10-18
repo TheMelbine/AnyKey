@@ -1,0 +1,82 @@
+[
+  {
+    "id": 0,
+    "imageUrl": "https://static.insales-cdn.com/images/products/1/4067/592842723/large_Vortex_Tab_60.jpg",
+    "title": "Vortex Tab 60",
+    "types": [0, 1],
+    "sizes": ["Cherry Brown", "Cherry Blue", "Cherry Black"],
+    "price": "11 690",
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 1,
+    "imageUrl": "https://static.insales-cdn.com/images/products/1/6792/592845448/large_Varmilo_Cliff_Awake_VCS87.jpg",
+    "title": "Varmilo Cliff: Awake VCS87",
+    "types": [0],
+    "sizes": ["Cherry Brown", "Cherry Blue", "Cherry MX Read"],
+    "price": "15 490",
+    "category": 0,
+    "rating": 6
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://static.insales-cdn.com/images/products/1/5043/582333363/1.jpg",
+    "title": "Ducky One 3 Mini White",
+    "types": [0,1],
+    "sizes": ["MX RGB Silent Red", "MX RGB Silent Brown"],
+    "price": "12 800",
+    "category": 0,
+    "rating": 6
+  },
+{
+    "id": 3,
+    "imageUrl": "https://static.insales-cdn.com/images/products/1/4698/467718746/large_2.jpg",
+    "title": "Das Keyboard 4 Ultimate",
+    "types": [0,1],
+    "sizes": ["Cherry MX RGB Blue","Cherry MX RGB Red"],
+    "price": "14 390",
+    "category": 0,
+    "rating": 7
+  }, 
+  {
+    "id": 4,
+    "imageUrl": "https://static.insales-cdn.com/images/products/1/7346/585800882/large_Vintage108_eng.jpg",
+    "title": "Varmilo Vintage Days CMYK V2 VEA108",
+    "types": [0],
+    "sizes": ["Cherry MX Brown","Cherry MX Red"],
+    "price": "15 490",
+    "category": 0,
+    "rating": 6
+  }, 
+  {
+    "id": 5,
+    "imageUrl": "https://static.insales-cdn.com/images/products/1/1492/524977620/large_1.jpg",
+    "title": "Varmilo Beijing Opera V2",
+    "types": [1],
+    "sizes": ["Cherry Brown", "Cherry Blue", "Cherry MX Read"],
+    "price": "15 990",
+    "category": 0,
+    "rating": 2
+  }, 
+  {
+    "id": 6,
+    "imageUrl": "https://static.insales-cdn.com/images/products/1/7691/419610123/large_1.jpg",
+    "title": "Vortex 10 — 10th",
+    "types": [0,1],
+    "sizes": ["Cherry MX RGB Blue", "Cherry MX RGB Red"],
+    "price": "14 690",
+    "category": 0,
+    "rating": 6
+  }, 
+  {
+    "id": 7,
+    "imageUrl": "https://static.insales-cdn.com/images/products/1/1220/592864452/large_Leopold_FC750R_BT_WhiteGray.jpg",
+    "title": "Leopold FC750R BT",
+    "types": [0],
+    "sizes": ["Cherry Brown", "Cherry Blue", "Cherry MX Read"],
+    "price": "15 490",
+    "category": 0,
+    "rating": 6
+  }
+]
