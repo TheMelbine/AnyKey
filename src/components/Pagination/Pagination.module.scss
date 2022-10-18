@@ -1,0 +1,44 @@
+.root{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+    color: black;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 40px;
+
+    :global .selected{
+        background: #fe5f1e;
+    }
+    li{
+        border-radius: 100%;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #fe5f1e;
+        margin-right: 10px;
+            a{
+                line-height: 25px;
+
+                text-align: center;
+
+                cursor: pointer;
+                width: 50px;
+                height: 50px;
+                padding: 10px;
+                border-radius: 100%;
+                font-size: 24px;
+
+                &:hover{
+                    color:white;
+                    background: #fe5f1e;
+            }
+        }
+    }
+
+}

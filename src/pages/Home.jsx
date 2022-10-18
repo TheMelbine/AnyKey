@@ -1,9 +1,11 @@
 import React from 'react';
 
+
 import Categories from '../components/Categories';
 import Sort from '../components/Sort';
 import Keyboard from '../components/KeyboardBlock';
 import Skeleton from '../components/KeyboardBlock/Skeleton';
+import Pagination from "../components/Pagination";
 
 const Home = ({ searchValue }) => {
   const [items, setItems] = React.useState([]);
@@ -47,6 +49,7 @@ const Home = ({ searchValue }) => {
         {isLoading ? skeletons : pizzas}
         {/* </div> */}
       </div>
+            <Pagination />
     </>
   );
 };
