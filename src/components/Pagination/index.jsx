@@ -3,7 +3,7 @@ import ReactPaginate from "react-paginate";
 
 import styles from './Pagination.module.scss'
 
-const Pagination = () => {
+const Pagination = ({xTotalCount}) => {
     return (
         <ReactPaginate
             class = "unselectable"
@@ -13,7 +13,7 @@ const Pagination = () => {
             nextLabel=">"
             onPageChange={event => console.log(event)}
             pageRangeDisplayed={5}
-            pageCount={3}
+            pageCount={xTotalCount}
             previousLabel="<"
             renderOnZeroPageCount={null}
         />

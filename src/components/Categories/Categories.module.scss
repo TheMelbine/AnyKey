@@ -1,7 +1,15 @@
 @import '../../scss/_variables.scss';
 
+
 .categories {
   overflow: auto;
+  :global(.active){
+    background: black ;
+    color: white;
+    &:hover{
+      background: black ;
+    }
+  }
   ul {
     display: flex;
     white-space: nowrap;
