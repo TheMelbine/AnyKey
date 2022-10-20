@@ -4,7 +4,7 @@ import Search from '../Search';
 
 import logoSvg from '../../assets/img/Frame 38.svg';
 import styles from './Header.module.scss';
-function Header({ searchValue, setSearchValue }) {
+function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.container}>
@@ -19,7 +19,7 @@ function Header({ searchValue, setSearchValue }) {
             </Link>
           </div>
         </div>
-        <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+        <Search/>
         <div className={styles.header__cart}>
           <Link to="/cart" className={[styles.button, styles.button__cart].join(' ')}>
             <span>0 ₽</span>

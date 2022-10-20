@@ -6,8 +6,10 @@ import Sort from '../components/Sort';
 import Keyboard from '../components/KeyboardBlock';
 import Skeleton from '../components/KeyboardBlock/Skeleton';
 import Pagination from "../components/Pagination";
+import {SearchContext} from "../App";
 
-const Home = ({searchValue}) => {
+const Home = () => {
+    const {searchValue, setSearchValue} = React.useContext(SearchContext)
     const [items, setItems] = React.useState([]);
     const [xCountHeader, setXCountHeader] = React.useState(0)
     const [isLoading, setIsLoading] = React.useState(true);
@@ -35,12 +37,13 @@ const Home = ({searchValue}) => {
                 categoryId > 0 ? `category=${categoryId}` : ''
             }&_sort=${sortType.sortProperty}&_order=${sortType.order}&_page=1&_limit=4`,
         ).then((res) => {
-             xTotalCount = res.headers.get("x-total-count")
-            return res.json()
+             xTotalCount = res.headers.get("x-total-count");
+            setXCountHeader(xTotalCount);
+            console.log(xCountHeader);
+            return res.json();
         })
             .then((arr) => {
 
-                console.log(xTotalCount)
                 setItems(arr);
                 setIsLoading(false);
             });
