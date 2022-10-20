@@ -1,4 +1,5 @@
 import React from 'react';
+import {useSelector} from "react-redux";
 
 
 import Categories from '../components/Categories';
@@ -9,21 +10,13 @@ import Pagination from "../components/Pagination";
 import {SearchContext} from "../App";
 
 const Home = () => {
+    const {categoryId,sort} = useSelector((state) => state.filterSlice);
+
     const {searchValue, setSearchValue} = React.useContext(SearchContext)
     const [items, setItems] = React.useState([]);
-    const [xCountHeader, setXCountHeader] = React.useState(0)
     const [isLoading, setIsLoading] = React.useState(true);
-    const [categoryId, setCategoryId] = React.useState(0);
 
-    const [sortType, setSortType] = React.useState({
-        name: ' ▲ popularity',
-        sortProperty: 'rating',
-        order: 'asc',
-    });
-
-    let xTotalCount
     const pizzas = items
-
         .filter((obj) => {
             return obj.title.toLowerCase().includes(searchValue.toLowerCase())
         })
@@ -32,28 +25,26 @@ const Home = () => {
 
     React.useEffect(() => {
         setIsLoading(true);
-        fetch(
-            `http://localhost:3001/keyboard?${
-                categoryId > 0 ? `category=${categoryId}` : ''
-            }&_sort=${sortType.sortProperty}&_order=${sortType.order}&_page=1&_limit=4`,
-        ).then((res) => {
-             xTotalCount = res.headers.get("x-total-count");
-            setXCountHeader(xTotalCount);
-            console.log(xCountHeader);
-            return res.json();
-        })
-            .then((arr) => {
 
+        const category = categoryId > 0 ? `category=${categoryId}` : ''
+
+        fetch
+        (
+            `http://localhost:3001/keyboard?${category}&_sort=${sort.sortProperty}&_order=${sort.order}&_page=1&_limit=4`
+        )
+
+            .then(res => res.json())
+            .then((arr) => {
                 setItems(arr);
                 setIsLoading(false);
             });
-    }, [categoryId, sortType]);
+    }, [categoryId, sort]);
 
     return (
         <>
             <div className="content__top">
-                <Categories value={categoryId} onClickCategory={(id) => setCategoryId(id)}/>
-                <Sort value={sortType} onChangeSort={(id) => setSortType(id)}/>
+                <Categories/>
+                <Sort/>
             </div>
             <h2 className="content__title">All keyboard</h2>
             <div className="content__items">
@@ -61,7 +52,7 @@ const Home = () => {
                 {isLoading ? skeletons : pizzas}
                 {/* </div> */}
             </div>
-            <Pagination xTotalCount={xTotalCount}/>
+            <Pagination/>
         </>
     );
 };
