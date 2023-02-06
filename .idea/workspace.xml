@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c841e2e1-8416-4b82-bf7e-815dc6580749" name="Changes" comment="fix props Drilling">
+    <list default="true" id="c841e2e1-8416-4b82-bf7e-815dc6580749" name="Changes" comment="add adaptive Pagination, react-redux slice, remove json-server from front side repository, remove react context">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Categories/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pagination/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sort.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sort.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/filterSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/filterSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +99,7 @@
       <workItem from="1666277860682" duration="9762000" />
       <workItem from="1675641638377" duration="890000" />
       <workItem from="1675647193851" duration="5306000" />
-      <workItem from="1675672283951" duration="8807000" />
+      <workItem from="1675672283951" duration="9647000" />
     </task>
     <task id="LOCAL-00001" summary="add local host json-server&#10;rewrite pagiantion">
       <created>1666218099351</created>
@@ -124,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666254199285</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add adaptive Pagination, react-redux slice, remove json-server from front side repository, remove react context">
+      <created>1675688724936</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675688724936</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +160,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add local host json-server&#10;rewrite pagiantion" />
     <MESSAGE value="fix props Drilling" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix props Drilling" />
+    <MESSAGE value="add adaptive Pagination, react-redux slice, remove json-server from front side repository, remove react context" />
+    <option name="LAST_COMMIT_MESSAGE" value="add adaptive Pagination, react-redux slice, remove json-server from front side repository, remove react context" />
   </component>
 </project>
