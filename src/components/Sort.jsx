@@ -5,7 +5,7 @@ import {setSort} from "../redux/slices/filterSlice";
 
 function Sort() {
   const dispatch = useDispatch()
-  const sort = useSelector(state => state.filterSlice.sort)
+  const {sort} = useSelector(state => state.filterSlice)
 
   const [open, setOpen] = React.useState(false);
   const list = [

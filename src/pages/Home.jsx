@@ -1,5 +1,6 @@
 import React from 'react';
-import {useSelector} from "react-redux";
+import axios from "axios";
+import {useSelector,useDispatch} from "react-redux";
 
 
 import Categories from '../components/Categories';
@@ -7,38 +8,41 @@ import Sort from '../components/Sort';
 import Keyboard from '../components/KeyboardBlock';
 import Skeleton from '../components/KeyboardBlock/Skeleton';
 import Pagination from "../components/Pagination";
-import {SearchContext} from "../App";
+
 
 const Home = () => {
-    const {categoryId,sort} = useSelector((state) => state.filterSlice);
+    const dispatch = useDispatch();
 
-    const {searchValue, setSearchValue} = React.useContext(SearchContext)
+    const {categoryId,sort,searchValue,currentPage} = useSelector((state) => state.filterSlice);
+    const [pageCount, setPageCount] = React.useState(0);
     const [items, setItems] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(true);
 
-    const pizzas = items
-        .filter((obj) => {
-            return obj.title.toLowerCase().includes(searchValue.toLowerCase())
-        })
-        .map((obj) => <Keyboard key={obj.id} {...obj} />);
-    const skeletons = [...new Array(8)].map((_, index) => <Skeleton key={index}/>);
-
+    const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index}/>);
     React.useEffect(() => {
         setIsLoading(true);
 
-        const category = categoryId > 0 ? `category=${categoryId}` : ''
+        const category = categoryId > 0 ? `category_=${categoryId}` : ''
 
-        fetch
-        (
-            `http://localhost:3001/keyboard?${category}&_sort=${sort.sortProperty}&_order=${sort.order}&_page=1&_limit=4`
-        )
+        axios
+            .get(
+            `https://json-anykey-1yu5wz3gk-themelbine.vercel.app/keyboard?${category}&_sort=${sort.sortProperty}&_order=${sort.order}&_page=${currentPage}&_limit=4`
+            )
+            .then((res) =>{
+                setPageCount(res.headers["x-total-count"] / 4)
+                setItems(res.data)
+                setIsLoading(false)
+            })
+;
 
-            .then(res => res.json())
-            .then((arr) => {
-                setItems(arr);
-                setIsLoading(false);
-            });
-    }, [categoryId, sort]);
+    }, [categoryId, sort,currentPage]);
+    const keyboards = items
+
+        .filter((obj) => {
+
+            return obj.title.toLowerCase().includes(searchValue.toLowerCase())
+        })
+        .map((obj) => <Keyboard key={obj.id} {...obj} />);
 
     return (
         <>
@@ -49,10 +53,10 @@ const Home = () => {
             <h2 className="content__title">All keyboard</h2>
             <div className="content__items">
                 {/* <div className="keyboard-block--wrapper"> */}
-                {isLoading ? skeletons : pizzas}
+                {isLoading ? skeletons : keyboards}
                 {/* </div> */}
             </div>
-            <Pagination/>
+            <Pagination pageCount={pageCount}/>
         </>
     );
 };
