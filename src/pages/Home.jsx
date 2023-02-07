@@ -22,7 +22,7 @@ const Home = () => {
     React.useEffect(() => {
         setIsLoading(true);
 
-        const category = categoryId > 0 ? `_category=${categoryId}` : ''
+        const category = categoryId > 0 ? `category=${categoryId}` : ''
 
         axios
             .get(
