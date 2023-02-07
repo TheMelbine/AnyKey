@@ -20,7 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run dev\"",
+    "start": "npm run dev",
     "server": "json-server -w src/server/db.json -p 3001",
     "dev": "react-scripts start",
     "build": "react-scripts build",
@@ -44,9 +44,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "concurrently": "^7.6.0",
-    "json-server": "^0.17.0"
   }
 }

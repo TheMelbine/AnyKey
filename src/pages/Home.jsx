@@ -26,7 +26,7 @@ const Home = () => {
 
         axios
             .get(
-            `https://json-anykey-1yu5wz3gk-themelbine.vercel.app/keyboard?${category}&_sort=${sort.sortProperty}&_order=${sort.order}&_page=${currentPage}&_limit=4`
+            `https://json-anykey.vercel.app/keyboard?${category}&_sort=${sort.sortProperty}&_order=${sort.order}&_page=${currentPage}&_limit=4`
             )
             .then((res) =>{
                 setPageCount(res.headers["x-total-count"] / 4)
