@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c841e2e1-8416-4b82-bf7e-815dc6580749" name="Changes" comment="add adaptive Pagination, react-redux slice, remove json-server from front side repository, remove react context">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c841e2e1-8416-4b82-bf7e-815dc6580749" name="Changes" comment="fix link at DB">
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +101,7 @@
       <workItem from="1675647193851" duration="5306000" />
       <workItem from="1675672283951" duration="9647000" />
       <workItem from="1675753282435" duration="279000" />
+      <workItem from="1675753953801" duration="346000" />
     </task>
     <task id="LOCAL-00001" summary="add local host json-server&#10;rewrite pagiantion">
       <created>1666218099351</created>
@@ -123,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675688724936</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix link at DB">
+      <created>1675754078831</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675754078831</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +170,7 @@
     <MESSAGE value="add local host json-server&#10;rewrite pagiantion" />
     <MESSAGE value="fix props Drilling" />
     <MESSAGE value="add adaptive Pagination, react-redux slice, remove json-server from front side repository, remove react context" />
-    <option name="LAST_COMMIT_MESSAGE" value="add adaptive Pagination, react-redux slice, remove json-server from front side repository, remove react context" />
+    <MESSAGE value="fix link at DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix link at DB" />
   </component>
 </project>

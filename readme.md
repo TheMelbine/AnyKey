@@ -1,9 +1,9 @@
 # AnyKey ⌨️
 > Application for learning React + Redux, etc.
 
-[Deployed (Сlick to view) 🖱️  ](https://any-key.vercel.app/ "AnyKey Online DEMO")
+[Deployed (Click to view) 🖱️  ](https://anykey.vercel.app "AnyKey Online DEMO")
 
-## What i used?
+## What I used?
 ```✅ - in project 🕐 - in progress```
 
 - **✅ ReactJS 18**
@@ -14,13 +14,13 @@
 - ✅ React Hooks
 - ✅ CSS-Modules / SCSS
 - ✅ React Content Loader
-- 🕐 React Pagination
+- ✅ React Pagination
 - 🕐Lodash.Debounce
 - 🕐 Code Splitting, React Loadable, useWhyDidYouUpdate
 ## TO-DO LIST
 ```✅ - in project   🕐 - in progress```
 
 - ✅~~Use back-end sort~~
-- 🕐 **Create input to find keyboard**
+- ✅ **Create input to find keyboard**
 
-- 🕐 **Add pagination to site**
+- ✅ **Add pagination to site**
