@@ -29,10 +29,10 @@ const Home = () => {
         setIsLoading(true);
 
         const category = categoryId > 0 ? `category=${categoryId}` : ''
-
+        const search = searchValue !== 0 ? searchValue : ''
         axios
             .get(
-            `https://json-anykey.vercel.app/keyboard?${category}&_sort=${sort.sortProperty}&_order=${sort.order}&_page=${currentPage}&_limit=4`
+            `https://json-anykey.vercel.app/keyboard?q=${search}&_sort=${sort.sortProperty}&_order=${sort.order}&_page=${currentPage}&${category}&_limit=4`
             )
             .then((res) =>{
                 setPageCount(res.headers["x-total-count"] / 4)
@@ -41,13 +41,8 @@ const Home = () => {
             })
 ;
 
-    }, [categoryId, sort,currentPage]);
+    }, [categoryId, sort,currentPage,searchValue]);
     const keyboards = items
-
-        .filter((obj) => {
-
-            return obj.title.toLowerCase().includes(searchValue.toLowerCase())
-        })
         .map((obj) => <Keyboard key={obj.id} {...obj} />);
 
     return (
