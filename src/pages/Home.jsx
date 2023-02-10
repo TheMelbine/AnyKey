@@ -1,33 +1,38 @@
-import React, {useDeferredValue} from 'react';
+import React from 'react';
 import axios from "axios";
-import {useSelector,useDispatch} from "react-redux";
-import {debounce} from "lodash.debounceS";
+import {useSelector} from "react-redux";
+
 
 import Categories from '../components/Categories';
 import Sort from '../components/Sort';
 import Keyboard from '../components/KeyboardBlock';
 import Skeleton from '../components/KeyboardBlock/Skeleton';
 import Pagination from "../components/Pagination";
-import {setCurrentPage} from "../redux/slices/filterSlice";
 
 
 const Home = () => {
-    const dispatch = useDispatch();
-    const {categoryId,sort,searchValue,currentPage} = useSelector((state) => state.filterSlice);
-    const deferredValue = useDeferredValue(searchValue);
+
+    const [remountComponent, setRemountComponent] = React.useState(0);
+    const {categoryId,sort,searchValue} = useSelector((state) => state.filterSlice);
+    const [currentPage, setCurrentPage] = React.useState(1)
     const [pageCount, setPageCount] = React.useState(0);
-    const dev = deferredValue
     const [items, setItems] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(true);
+
+    const resetCurrentPage = () =>(
+        setCurrentPage(1)
+
+    )
 
     const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index}/>);
     React.useEffect(() => {
         setIsLoading(true);
 
         const category = categoryId > 0 ? `category=${categoryId}` : ''
+
         axios
             .get(
-            `https://json-anykey.vercel.app/keyboard?q=${deferredValue}&_sort=${sort.sortProperty}&_order=${sort.order}&_page=${currentPage}&_limit=4&${category}`
+            `https://json-anykey.vercel.app/keyboard?${category}&_sort=${sort.sortProperty}&_order=${sort.order}&_page=${currentPage}&_limit=4`
             )
             .then((res) =>{
                 setPageCount(res.headers["x-total-count"] / 4)
@@ -36,13 +41,19 @@ const Home = () => {
             })
 ;
 
-    }, [categoryId, sort,currentPage,pageCount,dev]);
+    }, [categoryId, sort,currentPage]);
     const keyboards = items
+
+        .filter((obj) => {
+
+            return obj.title.toLowerCase().includes(searchValue.toLowerCase())
+        })
         .map((obj) => <Keyboard key={obj.id} {...obj} />);
+
     return (
         <>
             <div className="content__top">
-                <Categories/>
+                <Categories resetCurrentPage = {resetCurrentPage} setRemountComponent={setRemountComponent}/>
                 <Sort/>
             </div>
             <h2 className="content__title">All keyboard</h2>
@@ -51,7 +62,9 @@ const Home = () => {
                 {isLoading ? skeletons : keyboards}
                 {/* </div> */}
             </div>
-            <Pagination pageCount={pageCount}/>
+            <div key={remountComponent}>
+            <Pagination setCurrentPage={setCurrentPage} pageCount={pageCount} currentPage={currentPage}/>
+            </div>
         </>
     );
 };

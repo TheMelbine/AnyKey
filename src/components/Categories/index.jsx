@@ -6,11 +6,13 @@ import styles from './Categories.module.scss'
 import {setCategoryId} from "../../redux/slices/filterSlice";
 
 
-function Categories({}) {
+function Categories({resetCurrentPage, setRemountComponent}) {
   const dispatch = useDispatch()
   const {categoryId} = useSelector((state) => state.filterSlice)
   const onChangeCategory = (id) =>{
     dispatch(setCategoryId(id))
+    resetCurrentPage()
+    setRemountComponent(Math.random());
   }
 
 
