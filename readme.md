@@ -20,7 +20,6 @@
 ## TO-DO LIST
 ```✅ - in project   🕐 - in progress```
 
-- ✅~~Use back-end sort~~
-- ✅ **Create input to find keyboard**
-
-- ✅ **Add pagination to site**
+- ✅ **~~Use back-end sort~~**
+- ✅ **~~Create input to find keyboard~~**
+- ✅ **~~Add pagination to site~~**

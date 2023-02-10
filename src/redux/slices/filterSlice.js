@@ -17,6 +17,7 @@ const filterSlice = createSlice({
     reducers:{
         setCategoryId(state, action){
             state.categoryId = action.payload
+            state.categoryId > 0 ? `category=${state.categoryId}` : ''
         },
         setSort(state, action){
             state.sort = action.payload

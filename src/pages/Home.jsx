@@ -1,20 +1,22 @@
-import React from 'react';
+import React, {useDeferredValue} from 'react';
 import axios from "axios";
 import {useSelector,useDispatch} from "react-redux";
-
+import {debounce} from "lodash.debounceS";
 
 import Categories from '../components/Categories';
 import Sort from '../components/Sort';
 import Keyboard from '../components/KeyboardBlock';
 import Skeleton from '../components/KeyboardBlock/Skeleton';
 import Pagination from "../components/Pagination";
+import {setCurrentPage} from "../redux/slices/filterSlice";
 
 
 const Home = () => {
     const dispatch = useDispatch();
-
     const {categoryId,sort,searchValue,currentPage} = useSelector((state) => state.filterSlice);
+    const deferredValue = useDeferredValue(searchValue);
     const [pageCount, setPageCount] = React.useState(0);
+    const dev = deferredValue
     const [items, setItems] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(true);
 
@@ -23,10 +25,9 @@ const Home = () => {
         setIsLoading(true);
 
         const category = categoryId > 0 ? `category=${categoryId}` : ''
-
         axios
             .get(
-            `https://json-anykey.vercel.app/keyboard?${category}&_sort=${sort.sortProperty}&_order=${sort.order}&_page=${currentPage}&_limit=4`
+            `https://json-anykey.vercel.app/keyboard?q=${deferredValue}&_sort=${sort.sortProperty}&_order=${sort.order}&_page=${currentPage}&_limit=4&${category}`
             )
             .then((res) =>{
                 setPageCount(res.headers["x-total-count"] / 4)
@@ -35,15 +36,9 @@ const Home = () => {
             })
 ;
 
-    }, [categoryId, sort,currentPage]);
+    }, [categoryId, sort,currentPage,pageCount,dev]);
     const keyboards = items
-
-        .filter((obj) => {
-
-            return obj.title.toLowerCase().includes(searchValue.toLowerCase())
-        })
         .map((obj) => <Keyboard key={obj.id} {...obj} />);
-
     return (
         <>
             <div className="content__top">

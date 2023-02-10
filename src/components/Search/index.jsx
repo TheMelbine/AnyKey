@@ -1,26 +1,41 @@
-import React, {useRef} from 'react';
+import React, {useDeferredValue, useRef, useState} from 'react';
 import {useDispatch,useSelector} from "react-redux";
-
 import styles from './Search.module.scss';
-
 import {setSearchValue} from "../../redux/slices/filterSlice";
+import debounce from "lodash.debounce";
 
 const Search = () => {
+    const [value, setValue] = React.useState()
     const dispatch = useDispatch()
-    const {searchValue} = useSelector((state) => state.filterSlice)
+    const searchValue = useSelector((state) => state.filterSlice.searchValue)
+    const deferredText = useDeferredValue(searchValue);
     const inputRef = useRef()
-    const onClickClear = ( ) =>{
-        dispatch(setSearchValue(''))
-        inputRef.current.focus()
-    }
+    const onClickClear = () => {
+        dispatch(setSearchValue(''));
+        setValue('');
+        inputRef.current.focus();
+    };
+
+    const updateSearchValue = React.useCallback(
+        debounce((str) => {
+            dispatch(setSearchValue(str));
+        }, 150),
+        [],
+    );
+
+    const onChangeInput = (event) => {
+        setValue(event.target.value);
+        updateSearchValue(event.target.value);
+    };
+
 
     return (
         <div className={styles.root}>
             <input
                 ref={inputRef}
                 className={styles.input}
-                value={searchValue}
-                onChange={(event) => setSearchValue(event.target.value)}
+                value={value}
+                onChange={onChangeInput}
                 placeholder="🔎  Find keyboard"
                 type="text"
             />

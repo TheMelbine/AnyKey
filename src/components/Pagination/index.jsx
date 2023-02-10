@@ -18,6 +18,7 @@ const Pagination = ({pageCount}) => {
             renderOnZeroPageCount={null}
         />
     );
+
 }
 
 export default Pagination;
