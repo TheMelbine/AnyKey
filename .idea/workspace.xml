@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c841e2e1-8416-4b82-bf7e-815dc6580749" name="Changes" comment="refactor api method, deleted dependency react-paginate">
-      <change afterPath="$PROJECT_DIR$/src/redux/slices/keyboards/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/slices/keyboards/index.js" afterDir="false" />
+    <list default="true" id="c841e2e1-8416-4b82-bf7e-815dc6580749" name="Changes" comment="switch to redux thunk api">
+      <change afterPath="$PROJECT_DIR$/src/Layout/Layout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Category/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/CategoryPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Categories/Categories.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/Categories.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Categories/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pagination/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/keyboards/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/keyboards/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/keyboards/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/keyboards/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +165,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676216854542</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="switch to redux thunk api">
+      <created>1676220308713</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676220308713</updated>
+    </task>
+    <task id="LOCAL-00008" summary="switch to redux thunk api">
+      <created>1676220357984</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676220357984</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +221,7 @@
     <MESSAGE value="fix link at DB" />
     <MESSAGE value="fix redux" />
     <MESSAGE value="refactor api method, deleted dependency react-paginate" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor api method, deleted dependency react-paginate" />
+    <MESSAGE value="switch to redux thunk api" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch to redux thunk api" />
   </component>
 </project>

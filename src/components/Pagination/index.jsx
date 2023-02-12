@@ -6,7 +6,7 @@ const Pagination = ({pageCount, currentPage, setCurrentPage}) => {
 
 
     let pageArr = new Array(Math.floor(pageCount)).fill(null).map((v,index)=> index+1)
-    console.log(pageArr);
+
     const onClickHandler = (value) =>{
         setCurrentPage(value)
     }

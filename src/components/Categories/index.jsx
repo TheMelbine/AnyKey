@@ -4,38 +4,48 @@ import {useSelector, useDispatch} from "react-redux";
 import styles from './Categories.module.scss'
 
 import {setCategoryId} from "../../redux/slices/filterSlice";
+import {Link} from "react-router-dom";
 
 
-function Categories({setCurrentPage}) {
-  const dispatch = useDispatch()
-  const {categoryId} = useSelector((state) => state.filterSlice)
-  const onChangeCategory = (id) =>{
-    dispatch(setCategoryId(id))
-    setCurrentPage(1)
-  }
+function Categories() {
+    const dispatch = useDispatch()
+    const {categoryId} = useSelector((state) => state.filterSlice)
+    const onChangeCategory = (value) => {
+        dispatch(setCategoryId(value))
+    }
 
 
-  const categories = [
-    'All',
-    'Custom',
-    'Traditional',
-    'Ergonomic',
-    'Special for MAC',
-    'Russian symbols',
-  ];
+    const categories = [{
+        path: '/', label: "All"
+    }, {
+        path: '/category/custom', label: "Custom", value: 'custom'
+    }, {
+        path: '/category/traditional', label: "Traditional", value: 'traditional'
+    }, {
+        path: '/category/ergonomic', label: "Ergonomic", value: 'ergonomic'
+    }, {
+        path: '/category/specialForMAC', label: "Special for MAC", value: 'specialForMAC'
+    }, {
+        path: '/category/cyrillic', label: "cyrillic", value: 'cyrillic'
+    },]
 
 
-  return (
-    <div className={styles.categories}>
-      <ul>
-        {categories.map((categoryName, i) => (
-          <li key={i} onClick={() => onChangeCategory(i)} className={categoryId === i ? 'active' : ''}>
-            {categoryName}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+        <div className={styles.categories}>
+            <ul>
+                {categories.map(({path, label, value}) => (
+                    <Link to={path}>
+                        <li key={path} onClick={() => onChangeCategory(value)}
+                            className={categoryId === value ? 'active' : ''}>
+                            {label}
+                        </li>
+
+                    </Link>
+
+                ))}
+            </ul>
+        </div>
+    );
 }
 
 export default Categories;

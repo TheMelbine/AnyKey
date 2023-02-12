@@ -22,7 +22,7 @@ const keyboardsSlice = createSlice({
         })
         builder.addCase(fetchKeyboards.rejected, (state, action) => {
             state.isLoading = false
-            state.error = action.payload
+            state.error = action?.error?.message
         })
     }
 })
