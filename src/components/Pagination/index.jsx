@@ -1,20 +1,27 @@
 import React from 'react';
-import ReactPaginate from "react-paginate";
-import styles from './Pagination.module.scss'
+import style from './Pagination.module.scss'
+import classNames from "classnames";
 
-const Pagination = ({pageCount, setCurrentPage}) => {
+const Pagination = ({pageCount, currentPage, setCurrentPage}) => {
 
-    return(
-        <ReactPaginate
-            className={styles.root}
-            breakLabel="..."
-            nextLabel=">"
-            onPageChange={event => setCurrentPage(event.selected + 1)}
-            pageRangeDisplayed={4}
-            pageCount={pageCount}
-            previousLabel="<"
-            renderOnZeroPageCount={null}
-        />
+
+    let pageArr = new Array(Math.floor(pageCount)).fill(null).map((v,index)=> index+1)
+    console.log(pageArr);
+    const onClickHandler = (value) =>{
+        setCurrentPage(value)
+    }
+    return (
+        <>
+            <ul>
+                {pageArr.map((value) => (
+                    <li className={classNames(style["pagination__item"],{
+                        [style.selected]: currentPage === value
+                    })} onClick={() => onClickHandler(value)}>{value}</li>
+                ))}
+            </ul>
+
+
+        </>
     );
 
 }
