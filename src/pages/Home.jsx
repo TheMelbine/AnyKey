@@ -1,5 +1,5 @@
 import React from 'react';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 
 import Categories from '../components/Categories';
@@ -7,41 +7,36 @@ import Sort from '../components/Sort';
 import Keyboard from '../components/KeyboardBlock';
 import Skeleton from '../components/KeyboardBlock/Skeleton';
 import Pagination from "../components/Pagination";
-import {getKeyboards} from "../api/keyboardAPI";
+import {fetchKeyboards} from "../redux/slices/keyboards/actions";
 
 
 const Home = () => {
-
-    const {categoryId,sort,searchValue} = useSelector((state) => state.filterSlice);
+    const dispatch = useDispatch();
+    const {categoryId, sort, searchValue} = useSelector((state) => state.filterSlice);
+    const {keyboards, isLoading, totalCount} = useSelector(state => state.keyboardsSlice)
     const [currentPage, setCurrentPage] = React.useState(1)
-    const [pageCount, setPageCount] = React.useState(0);
-    const [items, setItems] = React.useState([]);
-    const [isLoading, setIsLoading] = React.useState(true);
+
 
 
     const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index}/>);
     React.useEffect(() => {
-        setIsLoading(true);
+        const category = categoryId > 0 ? `${categoryId}` : ''
         const params = {
-            search: searchValue !== 0 ? searchValue : '',
+            q: searchValue !== 0 ? searchValue : '',
             _sort: sort.Property,
             _order: sort.order,
             _page: currentPage,
-            _category: categoryId > 0 ? `${categoryId}` : '',
             _limit: 4,
         }
+        if (category) {
+            params.category = category
+        }
+        dispatch(fetchKeyboards(params))
 
-        getKeyboards(params)
-            .then((res) =>{
-                setPageCount(res.headers["x-total-count"] / 4)
-                setItems(res.data)
-                setIsLoading(false)
-            })
-;
+        ;
 
-    }, [categoryId, sort,currentPage,searchValue]);
-    const keyboards = items
-        .map((obj) => <Keyboard key={obj.id} {...obj} />);
+    }, [categoryId, sort, currentPage, searchValue]);
+
 
     return (
         <>
@@ -52,11 +47,12 @@ const Home = () => {
             <h2 className="content__title">All keyboard</h2>
             <div className="content__items">
                 {/* <div className="keyboard-block--wrapper"> */}
-                {isLoading ? skeletons : keyboards}
+                {isLoading ? skeletons : keyboards
+                    .map((obj) => <Keyboard key={obj.id} {...obj} />)}
                 {/* </div> */}
             </div>
 
-            <Pagination setCurrentPage={setCurrentPage} pageCount={pageCount} currentPage={currentPage}/>
+            <Pagination setCurrentPage={setCurrentPage} pageCount={totalCount / 4} currentPage={currentPage}/>
 
         </>
     );

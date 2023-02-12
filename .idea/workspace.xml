@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c841e2e1-8416-4b82-bf7e-815dc6580749" name="Changes" comment="fix redux">
-      <change afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/keyboardAPI.js" afterDir="false" />
+    <list default="true" id="c841e2e1-8416-4b82-bf7e-815dc6580749" name="Changes" comment="refactor api method, deleted dependency react-paginate">
+      <change afterPath="$PROJECT_DIR$/src/redux/slices/keyboards/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/slices/keyboards/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Categories/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NotFoundBlock/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotFoundBlock/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pagination/Pagination.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination/Pagination.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pagination/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +69,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/redux/slices/keyboards" />
       <recent name="C:\Users\Melbine\WebstormProjects\AnyKey\src" />
     </key>
   </component>
@@ -156,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676042859904</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactor api method, deleted dependency react-paginate">
+      <created>1676216854542</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676216854542</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +200,7 @@
     <MESSAGE value="add adaptive Pagination, react-redux slice, remove json-server from front side repository, remove react context" />
     <MESSAGE value="fix link at DB" />
     <MESSAGE value="fix redux" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix redux" />
+    <MESSAGE value="refactor api method, deleted dependency react-paginate" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor api method, deleted dependency react-paginate" />
   </component>
 </project>
