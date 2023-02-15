@@ -3,16 +3,16 @@ import {Link} from 'react-router-dom';
 import Styles from './Cart.module.scss';
 import KeyboardCartBlock from "../components/KeyboardsCartBlock";
 import {useDispatch, useSelector} from "react-redux";
-import Keyboard from "../components/KeyboardBlock";
-import {setTotalPrice,setTotalCount,setKeyboards} from "../redux/slices/cartSlice";
+import {setKeyboards} from "../redux/slices/cart";
+import {selectCartTotalCount, selectCartTotalPrice} from "../redux/slices/cart/selectors";
 export default function Cart() {
     const dispatch = useDispatch()
-    const {keyboards,totalPrice,totalCount} = useSelector(state => state.cartSlice)
+    const keyboards = useSelector(state => state.cartSlice.keyboards)
+    const totalPrice = useSelector(selectCartTotalPrice)
+    const totalCount = useSelector(selectCartTotalCount)
     const handleEmptyTrash = () =>{
-        console.log('clear');
-        dispatch(setTotalPrice(0))
-        dispatch(setTotalCount(0))
         dispatch(setKeyboards('clear'))
+
     }
     return (
         <div className="cart">

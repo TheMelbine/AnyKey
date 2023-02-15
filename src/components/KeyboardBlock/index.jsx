@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {setKeyboards, setTotalCount, setTotalPrice} from "../../redux/slices/cartSlice";
+import {useDispatch} from "react-redux";
+import {setKeyboards} from "../../redux/slices/cart";
 
 function KeyboardBlock({keyboard}) {
     const {title, price, imageUrl, sizes, types} = keyboard
@@ -11,13 +11,10 @@ function KeyboardBlock({keyboard}) {
     const [priceKeyboard, setPriceKeyboard] = useState(price)
 
     const dispatch = useDispatch()
-    const {keyboards, totalCount, totalPrice} = useSelector((state) => state.cartSlice) //TODO remove rerender selector
     const handlerOnClickAddButton = () => {
         dispatch(setKeyboards({
          ...keyboard, sizes: activeSize, types: activeType,
         }))
-        dispatch(setTotalCount(totalCount + 1))
-        dispatch(setTotalPrice(totalPrice + priceKeyboard))
     }
 
 useEffect(() =>{
