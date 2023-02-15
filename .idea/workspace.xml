@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c841e2e1-8416-4b82-bf7e-815dc6580749" name="Changes" comment="refactoring, add route by categories">
-      <change afterPath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" afterDir="false" />
+    <list default="true" id="c841e2e1-8416-4b82-bf7e-815dc6580749" name="Changes" comment="fix layout, start develop cart">
+      <change afterPath="$PROJECT_DIR$/src/components/KeyboardsCartBlock/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Categories/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Category/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Category/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/KeyboardBlock/Skeleton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeyboardBlock/Skeleton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/KeyboardBlock/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeyboardBlock/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pagination/Pagination.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination/Pagination.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pagination/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sort.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sort.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PizzaCartBlock/index.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Cart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/filterSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/filterSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/keyboards/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/keyboards/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_keyboard-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_keyboard-block.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +120,7 @@
       <workItem from="1675753282435" duration="279000" />
       <workItem from="1675753953801" duration="346000" />
       <workItem from="1676042608753" duration="733000" />
-      <workItem from="1676442405278" duration="616000" />
+      <workItem from="1676442405278" duration="14967000" />
     </task>
     <task id="LOCAL-00001" summary="add local host json-server&#10;rewrite pagiantion">
       <created>1666218099351</created>
@@ -184,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676220357984</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix layout, start develop cart">
+      <created>1676443658256</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676443658256</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +228,7 @@
     <MESSAGE value="fix redux" />
     <MESSAGE value="refactor api method, deleted dependency react-paginate" />
     <MESSAGE value="switch to redux thunk api" />
-    <option name="LAST_COMMIT_MESSAGE" value="switch to redux thunk api" />
+    <MESSAGE value="fix layout, start develop cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix layout, start develop cart" />
   </component>
 </project>

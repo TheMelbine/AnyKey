@@ -34,7 +34,7 @@ export const Category = ({categoryId}) => {
         <>
             <div className="content__items">
                 {isLoading ? skeletons : keyboards
-                    .map((obj) => <Keyboard key={obj.id} {...obj} />)}
+                    .map((obj) => <Keyboard key={obj.id} keyboard={obj} />)}
             </div>
             <Pagination setCurrentPage={setCurrentPage} pageCount={totalCount / 4} currentPage={currentPage}/>
         </>

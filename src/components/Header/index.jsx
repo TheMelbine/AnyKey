@@ -4,7 +4,9 @@ import Search from '../Search';
 
 import logoSvg from '../../assets/img/Frame 38.svg';
 import styles from './Header.module.scss';
+import {useSelector} from "react-redux";
 function Header() {
+  const {keyboards,totalPrice,totalCount} = useSelector(state => state.cartSlice)
   return (
     <div className={styles.header}>
       <div className={styles.container}>
@@ -22,7 +24,7 @@ function Header() {
         <Search/>
         <div className={styles.header__cart}>
           <Link to="/cart" className={[styles.button, styles.button__cart].join(' ')}>
-            <span>0 ₽</span>
+            <span>{totalPrice.toLocaleString('ru')} ₽</span>
             <div className="button__delimiter"></div>
             <svg
               width="18"
@@ -52,7 +54,7 @@ function Header() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span>0</span>
+            <span>{totalCount}</span>
           </Link>
         </div>
       </div>

@@ -1,31 +1,28 @@
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {setKeyboards} from "../../redux/slices/cartSlice";
+import {setKeyboards, setTotalCount, setTotalPrice} from "../../redux/slices/cartSlice";
 
-function KeyboardBlock({title, price, imageUrl, sizes, types}) {
+function KeyboardBlock({keyboard}) {
+    const {title, price, imageUrl, sizes, types} = keyboard
+
     const typeName = ['Wired', 'Wireless'];
-
     const [activeSize, setActiveSize] = useState(0);
     const [activeType, setActiveType] = useState(0);
     const [priceKeyboard, setPriceKeyboard] = useState(price)
 
     const dispatch = useDispatch()
-    const {keyboards} = useSelector((state) => state.cartSlice)
+    const {keyboards, totalCount, totalPrice} = useSelector((state) => state.cartSlice) //TODO remove rerender selector
     const handlerOnClickAddButton = () => {
-        dispatch(setKeyboards([{
-            title, price:priceKeyboard, imageUrl, sizes: activeSize, types:activeType
-        }]))
+        dispatch(setKeyboards({
+         ...keyboard, sizes: activeSize, types: activeType,
+        }))
+        dispatch(setTotalCount(totalCount + 1))
+        dispatch(setTotalPrice(totalPrice + priceKeyboard))
     }
 
-
-    useEffect(()=>{
-        if(activeSize === 0){
-            setPriceKeyboard(priceKeyboard+3000)
-        } else{
-            setPriceKeyboard(priceKeyboard-3000)
-        }
-    },[activeSize,activeType])
-
+useEffect(() =>{
+    console.log({activeSize,activeType})
+},[activeSize,activeType])
     return (<div className="keyboard-block--wrapper">
         <div className="keyboard-block">
             <img className="keyboard-block__image" src={imageUrl} alt="lOGO"/>
@@ -55,7 +52,7 @@ function KeyboardBlock({title, price, imageUrl, sizes, types}) {
                 </ul>
             </div>
             <div className="keyboard-block__bottom">
-                <div className="keyboard-block__price" >{priceKeyboard}₽</div>
+                <div className="keyboard-block__price">{priceKeyboard.toLocaleString('ru')}₽</div>
                 <button onClick={() => handlerOnClickAddButton()} className="button button--outline button--add">
                     <svg
                         width="12"
