@@ -29,11 +29,12 @@ body {
   }
 
   &__items {
+    margin-bottom: 50px;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     grid-column-gap: 11px;
-    grid-row-gap: 0px;
+    grid-row-gap: 0;
   }
   @media (max-width: 500px) {
     &__items{
@@ -41,7 +42,7 @@ body {
     }
     
     &__title{
-      margin: 35px 0px;
+      margin: 35px 0;
     }
   }
 
@@ -54,7 +55,7 @@ body {
       justify-content: center;
       .categories{
         white-space: nowrap;
-        width: 800;
+        width: 800px;
         overflow: scroll;
       }
     }
@@ -266,7 +267,6 @@ body {
 
         span {
           color: darken($color: $gray-line, $amount: 20);
-          font-weight: 500;
           font-weight: 600;
         }
 
@@ -314,7 +314,7 @@ body {
       color: #777777;
     }
 
-    icon {
+    .icon {
       position: relative;
       top: 2px;
     }

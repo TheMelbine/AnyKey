@@ -6,25 +6,32 @@
     -ms-user-select: none;       /* Internet Explorer/Edge */
     user-select: none;           /* Non-prefixed version, currently
                                   not supported by any browser */
-    color: black;
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 40px;
 }
     .selected{
         background: #fe5f1e;
     }
-
+.pagination__list{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 50px;
+    padding-left: 11px;
+}
     .pagination {
+
+
         &__item {
-            border-radius: 100%;
+            cursor: pointer;
+            border-radius: 10px;
             color: black;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 1px solid #fe5f1e;
             margin-right: 10px;
             &.selected{
+                cursor: default;
                 background: #fe5f1e;
             }
 

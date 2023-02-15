@@ -12,11 +12,11 @@ const Pagination = ({pageCount, currentPage, setCurrentPage}) => {
     }
     return (
         <>
-            <ul>
-                {pageArr.map((value) => (
+            <ul className={style.pagination__list}>
+                {pageArr.map((value,index) => (
                     <li className={classNames(style["pagination__item"],{
                         [style.selected]: currentPage === value
-                    })} onClick={() => onClickHandler(value)}>{value}</li>
+                    })} key={value + index} onClick={() => onClickHandler(value)}>{value}</li>
                 ))}
             </ul>
 

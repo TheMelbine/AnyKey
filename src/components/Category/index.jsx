@@ -31,13 +31,12 @@ export const Category = ({categoryId}) => {
 
 
     return (
-
-        <div className="content__items">
-            {/* <div className="keyboard-block--wrapper"> */}
-            {isLoading ? skeletons : keyboards
-                .map((obj) => <Keyboard key={obj.id} {...obj} />)}
-            {/* </div> */}
-            <Pagination setCurrentPage={setCurrentPage} pageCount={ totalCount / 4} currentPage={currentPage}/>
-        </div>
+        <>
+            <div className="content__items">
+                {isLoading ? skeletons : keyboards
+                    .map((obj) => <Keyboard key={obj.id} {...obj} />)}
+            </div>
+            <Pagination setCurrentPage={setCurrentPage} pageCount={totalCount / 4} currentPage={currentPage}/>
+        </>
     )
 }

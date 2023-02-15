@@ -16,7 +16,7 @@ function Categories() {
 
 
     const categories = [{
-        path: '/', label: "All"
+        path: '/', label: "All", value: 'All'
     }, {
         path: '/category/custom', label: "Custom", value: 'custom'
     }, {
@@ -34,8 +34,8 @@ function Categories() {
         <div className={styles.categories}>
             <ul>
                 {categories.map(({path, label, value}) => (
-                    <Link to={path}>
-                        <li key={path} onClick={() => onChangeCategory(value)}
+                    <Link key={path} to={path}>
+                        <li  onClick={() => onChangeCategory(value)}
                             className={categoryId === value ? 'active' : ''}>
                             {label}
                         </li>

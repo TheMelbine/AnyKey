@@ -8,8 +8,8 @@ const Skeleton = (props) => (
       style={{}}
       speed={2}
       width={282}
-      height={350}
-      viewBox="0 0 282 350"
+      height={369.5}
+      viewBox="0 0 282 369.5"
       backgroundColor="#c7c7c7"
       foregroundColor="#ffffff"
       {...props}>

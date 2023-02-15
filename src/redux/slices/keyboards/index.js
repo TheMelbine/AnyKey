@@ -4,7 +4,7 @@ import {fetchKeyboards} from "./actions";
 const initialState = {
     totalCount: 0,
     keyboards: [],
-    isLoading: false,
+    isLoading: true,
     error: null,
 }
 
@@ -21,7 +21,7 @@ const keyboardsSlice = createSlice({
             state.isLoading = false
         })
         builder.addCase(fetchKeyboards.rejected, (state, action) => {
-            state.isLoading = false
+            state.isLoading = true
             state.error = action?.error?.message
         })
     }
