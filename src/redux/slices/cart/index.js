@@ -4,7 +4,7 @@ const initialState = {
     keyboards: []
 }
 
-const index = createSlice({
+const cartSlice = createSlice({
     name: 'cart', initialState, reducers: {
         setKeyboards(state, action) {
             const newKeyboard = action.payload
@@ -27,5 +27,5 @@ const index = createSlice({
     }
 });
 
-export const {setKeyboards,clearCart} = index.actions
-export default index.reducer
+export const cartSliceActions = cartSlice.actions
+export default cartSlice.reducer

@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react';
 import {useDispatch} from "react-redux";
 import {setKeyboards} from "../../redux/slices/cart";
+import {useActionData} from "react-router-dom";
+import {useActions} from "../../redux/hooks/useActions";
 
 function KeyboardBlock({keyboard}) {
     const {title, price, imageUrl, sizes, types} = keyboard
@@ -10,11 +12,11 @@ function KeyboardBlock({keyboard}) {
     const [activeType, setActiveType] = useState(0);
     const [priceKeyboard, setPriceKeyboard] = useState(price)
 
-    const dispatch = useDispatch()
+    const {setKeyboards} = useActions()
     const handlerOnClickAddButton = () => {
-        dispatch(setKeyboards({
+        setKeyboards({
          ...keyboard, sizes: activeSize, types: activeType,
-        }))
+        })
     }
 
 useEffect(() =>{

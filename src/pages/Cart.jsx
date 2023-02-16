@@ -3,16 +3,18 @@ import {Link} from 'react-router-dom';
 import Styles from './Cart.module.scss';
 import KeyboardCartBlock from "../components/KeyboardsCartBlock";
 import {useDispatch, useSelector} from "react-redux";
-import {setKeyboards} from "../redux/slices/cart";
+
 import {selectCartTotalCount, selectCartTotalPrice} from "../redux/slices/cart/selectors";
+import {useActions} from "../redux/hooks/useActions";
+
 export default function Cart() {
+    const {clearCart} = useActions()
     const dispatch = useDispatch()
     const keyboards = useSelector(state => state.cartSlice.keyboards)
     const totalPrice = useSelector(selectCartTotalPrice)
     const totalCount = useSelector(selectCartTotalCount)
-    const handleEmptyTrash = () =>{
-        dispatch(setKeyboards('clear'))
-
+    const handleEmptyTrash = () => {
+        clearCart()
     }
     return (
         <div className="cart">
@@ -90,7 +92,7 @@ export default function Cart() {
             </div>
             <div class={Styles.content__items}>
             </div>
-            {keyboards.map((obj,index) => <KeyboardCartBlock key={index} {...obj} />)}
+            {keyboards.map((obj, index) => <KeyboardCartBlock key={index} {...obj} />)}
             <div class="cart__bottom">
                 <div class="cart__bottom-details">
           <span>

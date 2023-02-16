@@ -2,10 +2,11 @@ import Keyboard from "../KeyboardBlock";
 import {useDispatch, useSelector} from "react-redux";
 import Skeleton from "../KeyboardBlock/Skeleton";
 import React, {useState} from "react";
-import {fetchKeyboards} from "../../redux/slices/keyboards/actions";
 import Pagination from "../Pagination";
+import {useActions} from "../../redux/hooks/useActions";
 
 export const Category = ({categoryId}) => {
+    const {fetchKeyboards} = useActions()
     const dispatch = useDispatch();
     const {sort, searchValue} = useSelector((state) => state.filterSlice);
     const {keyboards, isLoading, totalCount} = useSelector(state => state.keyboardsSlice)
@@ -23,7 +24,7 @@ export const Category = ({categoryId}) => {
             _limit: 4,
         }
 
-        dispatch(fetchKeyboards(params))
+       fetchKeyboards(params)
 
         ;
 
