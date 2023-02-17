@@ -20,7 +20,7 @@
   span,
   path,
   svg {
-    margin-left: 5px;
+
     transition: all $duration ease-in-out;
   }
 
@@ -43,7 +43,9 @@
     padding: 0;
     border-width: 2px;
   }
-
+  &--rotated{
+    transform: rotate(45deg);
+  }
   &--black {
     background-color: $black;
 

@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from "react-redux";
 
 import styles from './Categories.module.scss'
 
-import {setCategoryId} from "../../redux/slices/filterSlice";
+import {setCategoryId} from "../../redux/slices/filters/filterSlice";
 import {Link} from "react-router-dom";
 
 

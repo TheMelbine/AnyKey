@@ -1,8 +1,6 @@
-import {useEffect, useState} from 'react';
-import {useDispatch} from "react-redux";
-import {setKeyboards} from "../../redux/slices/cart";
-import {useActionData} from "react-router-dom";
-import {useActions} from "../../redux/hooks/useActions";
+import {useState} from 'react';
+
+import {useActions} from "../../redux/hooks";
 
 function KeyboardBlock({keyboard}) {
     const {title, price, imageUrl, sizes, types} = keyboard
@@ -19,9 +17,6 @@ function KeyboardBlock({keyboard}) {
         })
     }
 
-useEffect(() =>{
-    console.log({activeSize,activeType})
-},[activeSize,activeType])
     return (<div className="keyboard-block--wrapper">
         <div className="keyboard-block">
             <img className="keyboard-block__image" src={imageUrl} alt="lOGO"/>

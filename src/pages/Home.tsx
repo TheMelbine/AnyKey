@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <>
             <h2 className="content__title">All keyboard</h2>
-                <Category categoryId={null}/>
+                <Category categoryId={''}/>
 
         </>
     );

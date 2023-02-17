@@ -1,8 +1,17 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {keyboardsSliceActions} from "./actions";
+import {TKeyboard} from "./types";
 
 
-const initialState = {
+
+type initKeyboard ={
+    totalCount: number;
+    keyboards: TKeyboard[];
+    isLoading: boolean;
+    error: any;
+}
+
+const initialState: initKeyboard = {
     totalCount: 0,
     keyboards: [],
     isLoading: true,
@@ -10,6 +19,7 @@ const initialState = {
 }
 
 const keyboardsSlice = createSlice({
+    reducers: {},
     name: 'keyboards',
     initialState,
     extraReducers: (builder) => {
