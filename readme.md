@@ -15,7 +15,7 @@
 - **✅ CSS-Modules / SCSS**
 - **✅ React Content Loader**
 - **✅ React Pagination**
-- **✅Lodash.Debounce**
+- **✅ Lodash.Debounce**
 - **🕐 Code Splitting, React Loadable, useWhyDidYouUpdate**
 ## TO-DO LIST
 

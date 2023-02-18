@@ -17,10 +17,24 @@ const setKeyboards: CaseReducer<TCartSlice, PayloadAction<TCartKeyboard>> = (sta
     }
 }
 
-const clearCart: CaseReducer<TCartSlice> = (state) =>{
+const removeKeyboards: CaseReducer<TCartSlice, PayloadAction<TCartKeyboard>> = (state, action) => {
+    const newKeyboard = action.payload
+    const hasSameKeyboard = !!state.keyboards.find(item => item.id === newKeyboard.id && item.types === newKeyboard.types && item.sizes === newKeyboard.sizes)
+
+    state.keyboards =state.keyboards.reduce((acc, item:TCartKeyboard) =>{
+        if(item.id === newKeyboard.id && item.types === newKeyboard.types && item.sizes === newKeyboard.sizes && item.count > 1){
+            acc.push({...item, count: item.count -1})
+        } else acc.push(item)
+
+        return acc
+    },[])
+}
+
+
+const clearCart: CaseReducer<TCartSlice> = (state) => {
     state.keyboards = []
 }
 
 export const cartActions = {
-    setKeyboards, clearCart
+    setKeyboards, removeKeyboards, clearCart
 }
