@@ -29,7 +29,7 @@ export default function Cart() {
             </div>
             <div className={styles.content__items}>
             </div>
-            {keyboards.map((obj, index) => <KeyboardCartBlock key={index} {...obj} />)}
+            {keyboards.map((keyboard, index) => <KeyboardCartBlock key={index} keyboard={keyboard} />)}
             <div className="cart__bottom">
                 <div className="cart__bottom-details">
           <span>

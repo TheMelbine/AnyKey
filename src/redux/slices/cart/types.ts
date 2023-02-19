@@ -5,5 +5,4 @@ export type TCartSlice = {
     keyboards: TCartKeyboard[]
 }
 
-
-export type TCartKeyboard = TKeyboard & { count: number }
+export type TCartKeyboard = TKeyboard & { count: number, activeSize: string, activeType: number }

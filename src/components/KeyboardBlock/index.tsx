@@ -1,19 +1,19 @@
-import {useState} from 'react';
+import {FC, useState} from 'react';
 
 import {useActions} from "../../redux/hooks";
+import {TKeyboard} from "../../redux/slices/keyboards/types";
 
-function KeyboardBlock({keyboard}) {
+const KeyboardBlock: FC<{keyboard: TKeyboard}> = ({keyboard}) => {
     const {title, price, imageUrl, sizes, types} = keyboard
 
     const typeName = ['Wired', 'Wireless'];
-    const [activeSize, setActiveSize] = useState(0);
-    const [activeType, setActiveType] = useState(0);
+    const [activeSize, setActiveSize] = useState<string>(sizes[0]);
+    const [activeType, setActiveType] = useState<number>(0);
     const [priceKeyboard, setPriceKeyboard] = useState(price)
-
     const {setKeyboards} = useActions()
     const handlerOnClickAddButton = () => {
         setKeyboards({
-         ...keyboard, sizes: activeSize, types: activeType,
+         ...keyboard,activeSize,activeType,
         })
     }
 
@@ -38,8 +38,8 @@ function KeyboardBlock({keyboard}) {
 
                         return (<li
                             key={index}
-                            onClick={() => setActiveSize(index)}
-                            className={activeSize === index ? 'active' : ''}>
+                            onClick={() => setActiveSize(value)}
+                            className={activeSize === value ? 'active' : ''}>
                             {value}
                         </li>);
                     })}

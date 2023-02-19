@@ -8,3 +8,6 @@ export type TKeyboard = {
     category: string;
     rating: number;
 }
+
+
+export type TKeyboardShopItem = TKeyboard & { activeSize: string, activeType: number }
